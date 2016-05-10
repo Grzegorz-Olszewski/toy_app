@@ -1,0 +1,25 @@
+<%= form_for(@u_sser) do |f| %>
+  <% if @u_sser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@u_sser.errors.count, "error") %> prohibited this u_sser from being saved:</h2>
+
+      <ul>
+      <% @u_sser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
